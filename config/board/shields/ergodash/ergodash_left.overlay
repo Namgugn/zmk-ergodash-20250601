@@ -7,6 +7,28 @@
 #include "ergodash.dtsi"
 
 / {
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+
+        row-gpios =
+            <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.06
+            , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.08
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.10
+            , <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.12
+            , <&gpio0 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.14
+            , <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // P0.16
+
+        col-gpios =
+            <&gpio0 18 GPIO_ACTIVE_HIGH>  // P0.18
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>  // P0.20
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>  // P0.22
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>  // P0.24
+            , <&gpio1 1  GPIO_ACTIVE_HIGH>  // P1.01
+            , <&gpio1 3  GPIO_ACTIVE_HIGH>  // P1.03
+            , <&gpio1 5  GPIO_ACTIVE_HIGH>; // P1.05
+    };
+
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "ErgoDash Left";
@@ -14,16 +36,7 @@
     };
 
     chosen {
+        zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
     };
-};
-
-&kscan0 {
-    col-gpios
-        = <&gpio0  4 GPIO_ACTIVE_HIGH>
-        , <&gpio0  5 GPIO_ACTIVE_HIGH>
-        , <&gpio0  10 GPIO_ACTIVE_HIGH>
-        , <&gpio0 9 GPIO_ACTIVE_HIGH>
-        , <&gpio0 8 GPIO_ACTIVE_HIGH>
-        ;
 };
