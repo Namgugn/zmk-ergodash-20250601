@@ -7,7 +7,7 @@
 #include <physical_layouts.dtsi>
     / {
     chosen {
-		zmk,physical-layout = &physical-layout;
+		zmk,physical-layout = &default_layout;
 		zmk,studio-rpc-uart = &uart1;
     };
 
