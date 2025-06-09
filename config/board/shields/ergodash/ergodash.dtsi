@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "./ergodash-layouts.dtsi"
+#include <physical_layouts.dtsi>
+#include "ergodash-layouts.dtsi"
 
 / {
         &physical_layout0 {
