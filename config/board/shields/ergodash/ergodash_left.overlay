@@ -6,6 +6,18 @@
 
 #include "ergodash.dtsi"
 
+/ {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "ErgoDash Left";
+        transform = <&default_transform>;
+    };
+
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+};
+
 &kscan0 {
     col-gpios
         = <&gpio0  4 GPIO_ACTIVE_HIGH>
