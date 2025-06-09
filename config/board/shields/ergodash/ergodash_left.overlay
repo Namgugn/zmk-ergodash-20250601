@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "ergodash.dtsi"
+
+&kscan0 {
+     col-gpios =
+            <&gpio0 17 GPIO_ACTIVE_HIGH>  // COL10 - P0.10
+            , <&gpio0 22  GPIO_ACTIVE_HIGH>  // COL11 - P0.09
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>  // COL12 - P0.11
+            , <&gpio1 00 GPIO_ACTIVE_HIGH>  // COL13 - P1.13
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>  // COL14 - P1.15
+            , <&gpio1 04 GPIO_ACTIVE_HIGH>  // COL15 - P0.02
+            , <&gpio1 06 GPIO_ACTIVE_HIGH>; // COL16 - P0.29
+};
