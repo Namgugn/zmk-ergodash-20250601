@@ -2,6 +2,12 @@
 #include "./ergodash-layouts.dtsi"
 
 / {
+        &physical_layout0 {
+    kscan = <&kscan0>;
+    transform = <&default_transform>;
+        };
+
+
        chosen {
         zmk,physical-layout = &physical_layout0;
     };
